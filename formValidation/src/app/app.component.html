@@ -1,0 +1,152 @@
+<div class="container">
+
+<div class="header">
+<h1>like & dislikes</h1>
+</div>
+
+<div>
+  <button type="submit" (click)="like()" class="btn btn-primary">like</button>
+  {{likes}}
+  <button type="submit"  (click)="dislike()" class="btn btn-primary">dislike</button>
+  {{dislikes}}
+</div>
+
+</div>
+
+
+<!-- form validation task start -->
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="card-header">
+     <h1>Book car</h1>
+    </div>
+
+    <div class="card-body" >
+
+      <form class="was-validated">
+
+      <label for="Model" class="form-group" class="form-label">Model</label>
+      <input type="text" id="Model" name="model"  #Model="ngModel" required="required" [(ngModel)]="car.Model" class="form-control">
+
+      <!-- <div *ngIf="Model.touched && Model.invalid">
+        <div *ngIf="Model.errors?.required" >
+          <p>Model required</p>
+      </div>
+      </div> -->
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+  
+
+      <label for="CompanyName" class="form-group">Company Name</label>
+      <input type="text" id="CompanyName" #CompanyName="ngModel" required="required" name="companyname" [(ngModel)]="car.CompanyName" class="form-control">
+      <!-- <div *ngIf="CompanyName.touched && CompanyName.invalid">
+        <div *ngIf="CompanyName.errors?.required" >
+          <p>company name required</p>
+      </div>
+      </div> -->
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+
+  <label for="PriceRange" class="form-group">price range</label>
+<select id="PriceRange" name="pricerange" #PriceRange="ngModel" required="required" [(ngModel)]="car.PriceRange" class="form-control">
+  <option >3lakhs-6lakhs</option>
+  <option >6lakhs-10lakhs</option>
+  <option >10lakhs-12lakhs</option>
+</select>
+
+<!-- <div *ngIf="PriceRange.touched && PriceRange.invalid">
+  <div *ngIf="PriceRange.errors?.required" >
+    <p>price range is required</p>
+</div>
+</div> -->
+<div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+
+<label for="Location" class="form-group">location</label>
+<select id="Location" name="location" #Location="ngModel" required="required" [(ngModel)]="car.Location" class="form-control">
+  <option >USA</option>
+  <option >UK</option>
+  <option >GERMANY</option>
+</select>
+
+<!-- <div *ngIf="Location.touched && Location.invalid">
+  <div *ngIf="Location.errors?.required" >
+    <p>location is required</p>
+</div>
+</div> -->
+
+<div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+
+<button type="submit" class="btn btn-primary">submit</button>
+<button type="submit" class="btn btn-success">cancel</button>
+
+    </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- form validation task end -->
+
+<div class="container" >
+  
+
+  
+  <div class="card-header">
+<h1>BUSES</h1>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="three()"  >three</button>
+  <button type="submit" class="btn btn-primary" (click)="five()">five</button>
+  <button type="submit" class="btn btn-primary" (click)="seven()">seven</button>
+  <div class="card">
+
+
+<div *ngIf="this.hi">
+  <div class="card-body" *ngFor="let x of Bus">
+    <div *ngIf="x.price>300000" >
+<P>{{x.id}}</P>
+<P>{{x.name}}</P>
+<P>{{x.model}}</P>
+<P>{{x.price}}</P>
+</div>
+</div>
+</div>
+
+<div *ngIf="this.hello">
+  <div class="card-body" *ngFor="let x of Bus">
+    <div *ngIf="x.price>500000" >
+<P>{{x.id}}</P>
+<P>{{x.name}}</P>
+<P>{{x.model}}</P>
+<P>{{x.price}}</P>
+</div>
+</div>
+</div>
+
+<div *ngIf="this.who">
+  <div class="card-body" *ngFor="let x of Bus">
+    <div *ngIf="x.price>700000" >
+<P>{{x.id}}</P>
+<P>{{x.name}}</P>
+<P>{{x.model}}</P>
+<P>{{x.price}}</P>
+</div>
+</div>
+</div>
+
+</div>
+
+
+ 
+</div>
+
+
+<h1>hello</h1>
